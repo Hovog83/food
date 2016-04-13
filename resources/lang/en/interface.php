@@ -1,0 +1,26 @@
+<?php 
+ return 
+ array (
+  'from' => 'From',
+  'home' => 'Home',
+  'to' => 'To',
+  'all' => 'All',
+  'name' => 'Name',
+  'address' => 'Address',
+  'mobileP' => 'Mobile Phone',
+  'homeP' => 'Home Phone',
+  'email' => 'E-mail',
+  'company' => 'Company',
+  'images' => 'Images',
+  'contact' => 'Contact',
+  'register' => 'Register',
+  'login' => 'Login',
+  'search' => 'Search...',
+  'Transportation' => 'Transportation',
+  'Electronics' => 'Electronics',
+  'Cars_for_Hire' => 'Cars for Hire',
+  'Computers_and_Internet' => 'Computers and Internet',
+  'my_account' => 'My Account',
+  'classifieds' => 'Post to Classifieds',
+  'test' => 'test',
+); ?>
