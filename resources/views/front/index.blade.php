@@ -1,425 +1,130 @@
 @extends('front.layout.main')
 @section('content')
-  <div id="slider">
+<div id="content" class="rst-main-content rst-content-full">
+  <br />
+  <br />
+  <div class="text-center">
+    <h3>{{trans('interface.best_dishes')}}</h3>
+  </div>
+  <div class="container">
+    <div class="row">
+@foreach($services as $value)
+      <div class="col-sm-4">
+        <div class="rst-dishes-item">
+          <div class="rst-thumbnail">
+            <a href="#">
+              <img class="img-responsive" src="{{asset('/uploads/thumb_'.$Service_m->getServiceMineImages($value->id)->image )}}" alt="" />
+              <span class="rst-price">{{$value->price}}</span>
+            </a>
+          </div>
+          <h3> {{trans('interface.'.$value->codeTitle)}} </h3>
+          <p>
+            {{trans('interface.'.$value->description)}}
+          </p>
+          <a href="#" class="btn btn-danger btn-lg">Add to cart</a>
+        </div>
+      </div>
+@endforeach
+    </div>
+  </div>
+  <div class="rst-dishes" data-background="{{asset('/assets/front/img/post/bg_dishes.jpg')}}">
+    <div class="rst-dishes-form clearfix">
+      <div class="rst-table">
+        <div class="rst-table-row">
+          <div class="rst-img-dishes rst-table-cell">
+            <img src="{{asset('/uploads/thumb_'.$Service_m->getServiceMineImages($service->id)->image )}}" alt="" />
+          </div>
+          <div class="rst-dishes-content rst-table-cell">
+            <h3> {{trans('interface.'.$service->codeTitle)}} {{$service->price}}</h3>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="rst-dishes-action">
+                  <h4><a href="#">{{trans('interface.'.$service->codeTitle)}}</a></h4>
+                  <span class="rst-price"> {{$service->price}}</span>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="btn btn-lg btn-success">Browse menu</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <br /><br /><hr /><br /><br />
+    <div class="container"><!--- container -->
+      <div class="row"><!--- row -->
+        <div class="col-sm-6">
+          <h3>{{trans('interface.about')}}</h3>
+          <p>{{trans('interface.aboutDesc')}} </p>
+        </div>
+        <div class="col-sm-6">
+          <h3>{{trans('interface.happy_hours')}}</h3>
+          <div class="rst-happy-hours">
+            <div class="clearfix rst-happy-date">
+              <div class="pull-left date">{{trans('interface.monday')}}</div>
+              <div class="pull-right hours"><span class="rst-stock in-stock" data-original-title="In stock" data-placement="bottom" data-toggle="tooltip"></span> 07.00 — 23.00</div>
+            </div>
+            <div class="clearfix rst-happy-date">
+              <div class="pull-left date">{{trans('interface.thuesday')}}</div>
+              <div class="pull-right hours"><span class="rst-stock in-stock" data-original-title="In stock" data-placement="bottom" data-toggle="tooltip"></span> 07.00 — 21.00</div>
+            </div>
+            <div class="clearfix rst-happy-date">
+              <div class="pull-left date">{{trans('interface.wednesday')}}</div>
+              <div class="pull-right hours"><span class="rst-stock low-stock" data-original-title="Low stock" data-placement="bottom" data-toggle="tooltip"></span> 18.00 — 21.00</div>
+            </div>
+            <div class="clearfix rst-happy-date">
+              <div class="pull-left date">{{trans('interface.thurstday')}}</div>
+              <div class="pull-right hours"><span class="rst-stock low-stock" data-original-title="Low stock" data-placement="bottom" data-toggle="tooltip"></span> 18.00 — 22.00</div>
+            </div>
+            <div class="clearfix rst-happy-date">
+              <div class="pull-left date">{{trans('interface.friday')}}</div>
+              <div class="pull-right hours"><span class="rst-stock in-stock" data-original-title="In stock" data-placement="bottom" data-toggle="tooltip"></span> 07.00 — 22.00</div>
+            </div>
+            <div class="clearfix rst-happy-date">
+              <div class="pull-left date">{{trans('interface.saturday')}}</div>
+              <div class="pull-right hours"><span class="rst-stock low-stock" data-original-title="Low stock" data-placement="bottom" data-toggle="tooltip"></span> 18.00 — 24.00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!--- end row -->
+    <!--- Contact Detail/Map -->
+    <div class="rst-contact">
+      <div id="map-canvas" class="rst-contact-maps" data-zoom="15" data-center="10.731688,122.5505356"> </div>
+      <div class="rst-opacity"></div>
+      <div class="rst-contact-add">
+        <h3>{{trans('interface.where_are_we')}} </h3>
+        <div class="rst-address">
+          <i class="fa fa-map-marker"></i>
+          <select name="" class="rst-drop-location">
+            <option value="Street 15, Manhattan, New York">USA</option>
+            <option value="Street 115, India">India</option>
+            <option value="Street 253, Russia">Russia</option>
+          </select>
+          <div class="address">Street 15, Manhattan, New York</div>
+        </div>
+      </div>
+    </div><!--- end Contact Detail/Map -->
+  </div><!--- end container -->
+
+  <!--- Footer -->
+  <footer id="footer">
     <div class="container">
-      <div class="tp-banner-container">
-        <div class="tp-banner">
-          <ul>
-            <!-- SLIDE  -->
-            <li data-transition="fade" data-slotamount="7" data-masterspeed="1500" >
-              <!-- MAIN IMAGE -->
-              <img src="{{asset('/assets/front/img/metrodir-slides-1.jpg')}}" data-bgposition="center" data-bgfit="cover" data-bgrepeat="no-repeat" alt="">
-            </li>
-            <!-- SLIDE  -->
-            <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000" >
-              <!-- MAIN IMAGE -->
-              <img src="{{asset('/assets/front/img/metrodir-slides-2.jpg')}}" data-bgposition="center" data-bgfit="cover" data-bgrepeat="no-repeat" alt="">
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="main-content">
-    <!-- Start Categories-List -->
-    <div class="categories list">
-      <div class="container">
-        <div class="row">
-        @foreach($catLIst as $value)
-
-          <div class="category-box col-lg-4 col-md-4 col-sm-6">
-            <header class="category-header realestate clearfix">
-              <a href="/services/{{$value["id"]}}">
-                <div class="category-icon"><i class="{{$value["icone"]}}"></i></div>
-                <div class="category-title">
-                  <h5>{{trans('interface.'.$value["codeTitle"])}}</h5>
-                  <strong class="count">(6)</strong>
-                </div>
+      <div class="row">
+        <div class="rst-table">
+          <div class="rst-table-row">
+            <div class="rst-copyright rst-table-cell">
+              <a href="https://www.linkedin.com/in/hovogasparyan" class="rst-logo-footer">
+              &copy; 2016 OwlToCode. All right reserved.
               </a>
-            </header>
-            <div class="category-list">
-              <ul class="custom-list">
-                @foreach($value["get_sub"] as $key => $val)
-                <li>
-                <a href="/services/{{$value["id"]}}/{{$val["id"]}}" title=""><i class="{{$val["icone"]}}"></i>{{trans('interface.'.$val["codeTitle"])}}</a>
-                </li>
-                @endforeach
-              </ul>
+            </div>
+            <div class="rst-note rst-table-cell">
             </div>
           </div>
-        @endforeach
-
         </div>
+        <a class="rst-backtop" href="#"><i class="fa fa-chevron-up"></i></a>
       </div>
     </div>
-    <!-- End Categories-List -->
-    
-    <!-- Start Companies-Sliders -->
-    <div class="companies-sliders">
-      <div class="container">
-
-        <!-- Start Featured-Companies-Slider -->
-        <h5 class="companies-slider-title">Featured Companies</h5>
-        <div class="row">
-          <div class="companies-slider featured">
-            <div class="company-box col-lg-3">
-              <div class="company-rating">
-                <ul class="custom-list">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-              </div>
-              <div class="overlay">
-                <img src="{{asset('/assets/front/img/company-thumb2.jpg')}}" alt="">
-                <div class="overlay-shadow">
-                  <div class="overlay-content">
-                    <a href="#" class="btn"><i class="fa fa-arrow-circle-right"></i>Read More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="white-bottom">
-                <h6 class="company-title"><a href="#">Company name goes here</a></h6>
-                <ul class="company-tags custom-list clearfix">
-                  <li><a href="#">Category</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="company-box col-lg-3">
-              <div class="company-rating">
-                <ul class="custom-list">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-              </div>
-              <div class="overlay">
-                <img src="{{asset('/assets/front/img/company-thumb3.jpg')}}" alt="">
-                <div class="overlay-shadow">
-                  <div class="overlay-content">
-                    <a href="#" class="btn"><i class="fa fa-arrow-circle-right"></i>Read More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="white-bottom">
-                <h6 class="company-title"><a href="#">Company name goes here</a></h6>
-                <ul class="company-tags custom-list clearfix">
-                  <li><a href="#">Category</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="company-box col-lg-3">
-              <div class="company-rating">
-                <ul class="custom-list">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-              </div>
-              <div class="overlay">
-                <img src="{{asset('/assets/front/img/company-thumb4.jpg')}}" alt="">
-                <div class="overlay-shadow">
-                  <div class="overlay-content">
-                    <a href="#" class="btn"><i class="fa fa-arrow-circle-right"></i>Read More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="white-bottom">
-                <h6 class="company-title"><a href="#">Company name goes here</a></h6>
-                <ul class="company-tags custom-list clearfix">
-                  <li><a href="#">Category</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="company-box col-lg-3">
-              <div class="company-rating">
-                <ul class="custom-list">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-              </div>
-              <div class="overlay">
-                <img src="{{asset('/assets/front/img/company-thumb5.jpg')}}" alt="">
-                <div class="overlay-shadow">
-                  <div class="overlay-content">
-                    <a href="#" class="btn"><i class="fa fa-arrow-circle-right"></i>Read More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="white-bottom">
-                <h6 class="company-title"><a href="#">Company name goes here</a></h6>
-                <ul class="company-tags custom-list clearfix">
-                  <li><a href="#">Category</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="company-box col-lg-3">
-              <div class="company-rating">
-                <ul class="custom-list">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-              </div>
-              <div class="overlay">
-                <img src="{{asset('/assets/front/img/company-thumb6.jpg')}}" alt="">
-                <div class="overlay-shadow">
-                  <div class="overlay-content">
-                    <a href="#" class="btn"><i class="fa fa-arrow-circle-right"></i>Read More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="white-bottom">
-                <h6 class="company-title"><a href="#">Company name goes here</a></h6>
-                <ul class="company-tags custom-list clearfix">
-                  <li><a href="#">Category</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End Featured-Companies-Slider -->
-
-        <!-- Start Latest-Companies-Slider -->
-        <h5 class="companies-slider-title">Latest Companies</h5>
-        <div class="companies-slider latest">
-          <div class="company-slide">
-            <div class="company-logo">
-              <a href="#"><img src="{{asset('/assets/front/img/logo-advert1.jpg')}}" alt=""></a>
-            </div>
-            <div class="company-content">
-              <h5 class="company-title"><a href="#">Industrie LLC</a></h5>
-              <ul class="company-tags custom-list clearfix">
-                <li><a href="#">Cars, </a></li>
-                <li><a href="#">Education, </a></li>
-                <li><a href="#">Industry</a></li>
-              </ul>
-              <p class="company-describe">Das ist wirklich interessant und ungewöhnlich, arbeiten wir für Sie. Vielen Dank an alle, die an ihn und machen das Beste Glocal Katalog in der Welt.</p>
-              <a href="#" class="btn btn-default"><i class="fa fa-arrow-circle-right"></i>Read More</a>
-            </div>
-          </div>
-
-          <div class="company-slide">
-            <div class="company-logo">
-              <a href="#"><img src="{{asset('/assets/front/img/logo-advert2.jpg')}}" alt=""></a>
-            </div>
-            <div class="company-content">
-              <h5 class="company-title"><a href="#">Industrie LLC</a></h5>
-              <ul class="company-tags custom-list clearfix">
-                <li><a href="#">Cars, </a></li>
-                <li><a href="#">Education, </a></li>
-                <li><a href="#">Industry</a></li>
-              </ul>
-              <p class="company-describe">Das ist wirklich interessant und ungewöhnlich, arbeiten wir für Sie. Vielen Dank an alle, die an ihn und machen das Beste Glocal Katalog in der Welt.</p>
-              <a href="#" class="btn btn-default"><i class="fa fa-arrow-circle-right"></i>Read More</a>
-            </div>
-          </div>
-
-          <div class="company-slide">
-            <div class="company-logo">
-              <a href="#"><img src="{{asset('/assets/front/img/logo-advert3.jpg')}}" alt=""></a>
-            </div>
-            <div class="company-content">
-              <h5 class="company-title"><a href="#">Industrie LLC</a></h5>
-              <ul class="company-tags custom-list clearfix">
-                <li><a href="#">Cars, </a></li>
-                <li><a href="#">Education, </a></li>
-                <li><a href="#">Industry</a></li>
-              </ul>
-              <p class="company-describe">Das ist wirklich interessant und ungewöhnlich, arbeiten wir für Sie. Vielen Dank an alle, die an ihn und machen das Beste Glocal Katalog in der Welt.</p>
-              <a href="#" class="btn btn-default"><i class="fa fa-arrow-circle-right"></i>Read More</a>
-            </div>
-          </div>
-
-          <div class="company-slide">
-            <div class="company-logo">
-              <a href="#"><img src="{{asset('/assets/front/img/logo-advert2.jpg')}}" alt=""></a>
-            </div>
-            <div class="company-content">
-              <h5 class="company-title"><a href="#">Industrie LLC</a></h5>
-              <ul class="company-tags custom-list clearfix">
-                <li><a href="#">Cars, </a></li>
-                <li><a href="#">Education, </a></li>
-                <li><a href="#">Industry</a></li>
-              </ul>
-              <p class="company-describe">Das ist wirklich interessant und ungewöhnlich, arbeiten wir für Sie. Vielen Dank an alle, die an ihn und machen das Beste Glocal Katalog in der Welt.</p>
-              <a href="#" class="btn btn-default"><i class="fa fa-arrow-circle-right"></i>Read More</a>
-            </div>
-          </div>
-
-        </div>
-        <!-- End Latest-Companies-Slider -->
-
-      </div>
-    </div>
-    <!-- End Companies-Sliders -->
-    
-    <!-- Start Subscribe -->
-    <div id="pricing" class="subscribe">
-      <div class="container">
-        <div class="row">
-
-          <!-- Start Pricing-Plans -->
-          <div class="pricing-plans">
-            <h5 class="pricing-title col-lg-12">Pricing Plans</h5>
-
-            <div class="pricing-plan col-lg-3 col-md-3 col-sm-6">
-              <h5 class="pricing-label start">Start</h5>
-              <div class="pricing-value">
-                <span class="pricing-unit">$</span>
-                <span class="pricing-cost">10</span>
-                <span class="pricing-cost-upper">00</span>
-              </div>
-              <ul class="pricing-include custom-list">
-                <li>1 Company</li>
-                <li>1 Post</li>
-                <li>1 Event</li>
-                <li>1 Product</li>
-                <li>Can rate company</li>
-                <li>Period of use Unlimited</li>
-              </ul>
-            </div>
-
-            <div class="pricing-plan col-lg-3 col-md-3 col-sm-6">
-              <h5 class="pricing-label silver">Silver</h5>
-              <div class="pricing-value">
-                <span class="pricing-unit">$</span>
-                <span class="pricing-cost">19</span>
-                <span class="pricing-cost-upper">00</span>
-              </div>
-              <ul class="pricing-include custom-list">
-                <li>1 Company</li>
-                <li>1 Post</li>
-                <li>1 Event</li>
-                <li>1 Product</li>
-                <li>Can rate company</li>
-                <li>Period of use Unlimited</li>
-              </ul>
-            </div>
-
-            <div class="pricing-plan col-lg-3 col-md-3 col-sm-6">
-              <h5 class="pricing-label gold">Gold</h5>
-              <div class="pricing-value">
-                <span class="pricing-unit">$</span>
-                <span class="pricing-cost">29</span>
-                <span class="pricing-cost-upper">00</span>
-              </div>
-              <ul class="pricing-include custom-list">
-                <li>1 Company</li>
-                <li>1 Post</li>
-                <li>1 Event</li>
-                <li>1 Product</li>
-                <li>Can rate company</li>
-                <li>Period of use Unlimited</li>
-              </ul>
-            </div>
-
-            <div class="pricing-plan col-lg-3 col-md-3 col-sm-6">
-              <h5 class="pricing-label premium">Premium</h5>
-              <div class="pricing-value">
-                <span class="pricing-unit">$</span>
-                <span class="pricing-cost">49</span>
-                <span class="pricing-cost-upper">00</span>
-              </div>
-              <ul class="pricing-include custom-list">
-                <li>1 Company</li>
-                <li>1 Post</li>
-                <li>1 Event</li>
-                <li>1 Product</li>
-                <li>Can rate company</li>
-                <li>Period of use Unlimited</li>
-              </ul>
-            </div>
-
-          </div>
-          <!-- End Pricing-Plans -->
-
-          <!-- Start Register -->
-          <div class="register">
-            <h5 class="register-title col-lg-12">Register</h5>
-            <form action="http://188.226.173.21/metrodirhtml/index.html" class="default-form">
-              <div class="register-step col-lg-6 col-md-6 col-sm-12">
-                <h5 class="register-step-title">Step 1: Register</h5>
-                <div class="register-step-inner">
-                  <h5>Login Details</h5>
-                  <input type="text" placeholder="Login">
-                  <input type="text" placeholder="E-Mail">
-                </div>
-              </div>
-              <div class="register-step col-lg-6 col-md-6 col-sm-12">
-                <h5 class="register-step-title">Step 2: Package</h5>
-                <div class="register-step-inner">
-                  <h5>Choose package:</h5>
-                  <span class="radio-input">
-                    <input id="start" type="radio" name="filter_type" value="start">
-                    <label for="start">Start (10 USD)</label>
-                  </span>
-                  <span class="radio-input">
-                    <input id="silver" type="radio" name="filter_type" value="silver">
-                    <label for="silver">Silver (19 USD)</label>
-                  </span>
-                  <span class="radio-input">
-                    <input id="gold" type="radio" name="filter_type" value="gold">
-                    <label for="gold">Gold (29 USD)</label>
-                  </span>
-                  <span class="radio-input">
-                    <input id="premium" type="radio" name="filter_type" value="premium">
-                    <label for="premium">Premium (49 USD)</label>
-                  </span>
-                </div>
-              </div>
-              <div class="register-step subscribe-final col-lg-12">
-                <div class="register-step-inner">
-                  <a href="#" class="btn btn-secondary"><i class="fa fa-arrow-circle-right"></i>Subscribe</a>
-                </div>
-              </div>
-            </form>
-          </div>
-          <!-- End Register -->
-
-        </div>
-      </div>
-    </div>
-    <!-- End Subscribe -->
-      
-    <!-- Start Partners -->
-    <div class="partners">
-      <div class="container">
-        <h5 class="partners-title">Our Partners</h5>
-        <div class="partners-slider">
-          <div class="partner-logo">
-            <img src="{{asset('/assets/front/img/partner.jpg')}}" alt="">
-          </div>
-          <div class="partner-logo">
-            <img src="{{asset('/assets/front/img/partner.jpg')}}" alt="">
-          </div>
-          <div class="partner-logo">
-            <img src="{{asset('/assets/front/img/partner2.jpg')}}" alt="">
-          </div>
-          <div class="partner-logo">
-            <img src="{{asset('/assets/front/img/partner3.jpg')}}" alt="">
-          </div>
-          <div class="partner-logo">
-            <img src="{{asset('/assets/front/img/partner4.jpg')}}" alt="">
-          </div>
-          <div class="partner-logo">
-            <img src="{{asset('/assets/front/img/partner6.jpg')}}" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Partners -->
-
-  </div>
+  </footer>
+</div><!--- End Wrapper -->
 @endsection

@@ -1,191 +1,152 @@
-            @include('front.layout.main_header')
-
-            <!-- Start Header -->
-            <header id="header">
-              <div class="header-inner">
-
-                <!-- Start Login-Shadow -->
-                <div id="login-shadow"></div>
-                <!-- End Login-Shadow -->
-
-                <div class="container">
-
-                  <!-- Start Utility-Nav-->
-
-                  <nav class="utility-nav clearfix">
-                    <ul class="utility-user custom-list">
-                    @if(!empty(Layout::getUserAuth()))
-                    <li id="">
-                      <a href="/account"  class="btn btn-default">
-                        <i class="fa fa-user"></i>
-                        <span>{{trans('interface.my_account')}}</span>
-                      </a>
-                    </li>                    
-                    <li id="">
-                      <a href="/classifieds"  class="btn btn-default">
-                        <i class="fa fa-plus"></i>
-                        <span>{{trans('interface.classifieds')}}</span>
-                      </a>
-                    </li>
-                    @else
-                      <li id="login">
-                        <a href="#" id="login-link" class="btn btn-default">
-                          <i class="fa fa-power-off"></i>
-                          <span>Login</span>
-                        </a>
-                        <form id="login-form" action="#" class="login-form default-form" method="post">
-                          <div class="login-form-container">
-                            <p class="form-row">
-                              <input type="text" placeholder="Login">
-                            </p>
-                            <p class="form-row">
-                              <input type="password" placeholder="Password">
-                            </p>
-                            <p class="form-row">
-                            <p class="form-row">
-                              <button class="submit-btn btn">Login</button>
-                            </p>
-                            <a href="#" class="password btn btn-default">Forgot Password</a>
-                          </div>
-                        </form>
-                      </li>
-
-                      <li id="register">
-                        <a href="#pricing" class="btn btn-default">
-                          <i class="fa fa-plus-circle"></i>
-                          <span>Register</span>
-                        </a>
-                      </li>
-                    @endif
-                    </ul>
-
-                    <div class="utility-social">
-                      <ul class="social-inner custom-list">
-                        <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-                        <li><a href="#" class="dribbble"><i class="fa fa-dribbble"></i></a></li>
-                      </ul>
-                    </div>
-                  </nav>
-                  <!-- End Utility Nav -->
-                  <!-- Start Search Nav -->
-                  <nav class="search-nav">
-                    <button class="advanced-search-button">
-                      <i class="fa fa-align-justify"></i>
-                    </button>
-
-                    <ul class="sub-menu custom-list">
-                      <li><a href="#"><i class="fa fa-globe"></i>General Search</a></li>
-                      <li><a href="#"><i class="fa fa-briefcase"></i>Companies</a></li>
-                      <li><a href="#"><i class="fa fa-plane"></i>Events</a></li>
-                      <li><a href="#"><i class="fa fa-gift"></i>Products & Services</a></li>
-                      <li><a href="#"><i class="fa fa-file-o"></i>Blogs</a></li>
-                    </ul>
-
-                    <form action="http://188.226.173.21/metrodirhtml/index.html" class="default-form">
-                      <input type="text" placeholder="Search...">
-                      <button><i class="fa fa-search"></i></button>
-                    </form>
-                  </nav>
-                  <!-- End Search Nav -->
-
-                  <!-- Start Menu Nav -->
-                  <div class="menu-nav row">
-
-                    <!-- Start Logo -->
-                    <div class="logo col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <a href="/"><img src="{{asset('/assets/front/img/logo.png')}}" alt="logo"></a>
-                    </div>
-                    <!-- End Logo -->
-                    @include('front.layout.main_nav_top')
-                    <!-- Start Nav -->
-                    <!-- End Nav -->
-                    <!-- Start Search Nav Mobile -->
-
-                    <!-- End Nav-Wrapper Mobile -->
-                  </div>
-                  <!-- End Menu Nav -->
-                  <!-- Responsive Menu Buttons -->
-                  <button class="search-toggle button"><i class="fa fa-search"></i></button>
-                    
-                  <button class="navbar-toggle button"><i class="fa fa-bars"></i></button>
-                  <!-- End Responsive Menu Buttons -->
-                </div>
-              </div>
-            </header>
-            <!-- End Header -->
-            <div class="page-heading">
-                <div class="container">
-                  <h5>Industry LLC</h5>
-                  <ul class="breadcrumbs custom-list">
-                    <li><a href="index-2.html">Home</a></li>
-                    <li>
-                      <a href="#">Cars,</a>
-                    </li>
-                    <li><a href="company-without-map.html">Industry LLC</a></li>
-                  </ul>
-                </div>
-              </div>
-@yield('content')
-          <footer id="footer">
-            <div class="container">
-              <div class="row">
-                <!-- Start Footer-Top -->
-                <div class="footer-top">
-                  <div class="widget col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <h5 class="widget-title">About Us</h5>
-                    <div class="widget-description"><p>Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit  magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis.</p></div>
-                  </div>
-                  <div class="widget col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                    <h5 class="widget-title">Recent tweets</h5>
-                    <div id="twitter-feed" class="block-content">
-                      <a class="twitter-timeline"  href="https://twitter.com/uouapps" data-widget-id="377042022453899264">Tweets by @uouapps</a>
-                    </div>
-                  </div>
-                  <div class="widget col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                    <h5 class="widget-title">Recent Posts</h5>
-                    <ul class="news custom-list">
-                      <li><a href="#">Blog Post Title goes here</a></li>
-                      <li><a href="#">Blog Post Title goes here</a></li>
-                      <li><a href="#">Blog Post Title goes here</a></li>
-                    </ul>
-                  </div>
-                  <div class="widget col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                    <h5 class="widget-title">Flickr Feed</h5>
-                    <div id="flickr-feed" class="block-content">52617155@N08</div>
-                  </div>
-                </div>
-                <!-- End Footer-Top -->
-              </div>
-            </div>
-            <!-- End Container -->
-            <!-- Start Footer Copyrights -->
-            <div class="footer-copyrights">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12"><p>Copyright © 2014 UOU Apps</p></div>
-                  <div class="col-lg-8 col-md-6 col-sm-6 col-xs-12">
-                    <ul class="social pull-right custom-list">
-                      <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
-                      <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
-                      <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-                      <li><a href="#" class="dribbble"><i class="fa fa-dribbble"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- End Footer Copyrights -->
-          </footer>
-  <!-- End Footer -->
+@include('front.layout.main_header')
+  <body>
+  <!-- Preloader -->
+  <div id="pageLoading">
+    <div class="bouncing">
+      <em class="icon-food"></em>
+    </div>
+  </div>
+<div id="wrapper" class="home-page">
+ <header id="header">
+  <div class="container">
+    <div class="rst-table">
+      <div class="rst-table-row">
+        <a href="index-2.html" class="rst-logo rst-table-cell"><img src="{{asset('/assets/front/img/logo-home.png')}}" alt="" /></a>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="rst-nav-menu collapse navbar-collapse bs-navbar-collapse rst-table-cell">
+          <form class="rst-search-mobie" action="http://themeforces.com/">
+            <button class="rst-submit"><i class="fa fa-search"></i></button>
+            <input type="text" value="" />
+          </form>
+          <ul class="rst-main-menu">
+            <li class="current-menu-item"><a href="/">Home</a></li>
+            <li class="">
+              <a href="#">Pages</a>
+            </li>
+            <li><a href="menu.html">Menu</a></li>
+          </ul>
         </div>
-        @include('front.layout.main_scripts')
+        <div class="rst-account rst-table-cell">
+          <div class="rst-cart">
+            <a href="#" class="rst-cart-icon"><span>+</span></a>
+            <div class="rst-form-login rst-cart-info">
+              <div class="rst-list-product">
+                <div class="rst-product-item">
+                  <a href="#">Sashimi &amp; vasabi <span class="count">2</span> <span class="price">$20</span></a>
+                </div>
+                <div class="rst-product-item">
+                  <a href="#">Dinner menu <span class="count">2</span> <span class="price">$25</span></a>
+                </div>
+                <div class="rst-product-item">
+                  <a href="#">Salade menu <span class="count">2</span> <span class="price">$25</span></a>
+                </div>
+              </div>
+              <div class="rst-checkout">
+                <a href="checkout.html" class="btn btn-success btn-sm">Check out</a>
+                <span class="price">$70</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        @yield('scripts', '')
+      </div>
+    </div>
+  </div>
+ </header>  
+ <!-- Hero Sliders -->
+ <div id="main-slider">
+  <div class="owl-carousel owl-theme">
+    <div class="item active"><!-- Item Slider #1 -->
+      <div id="slider-item-1" class="slider-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+              <div class="rst-table">
+                <div class="rst-table-row">
+                  <div class="rst-table-cell" style="width: 50%">
+                    
+                  </div>
+                  <div class="rst-table-cell" style="width: 50%">
+                    <img src="{{asset('/assets/front/img/post/slider3.png')}}" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img class="owl-main" src="{{asset('/assets/front/img/post/slides02.jpg')}}" alt="" />
+    </div>
+    <div class="item"><!-- Item Slider #2 -->
+      <div id="slider-item-2" class="slider-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+              <div class="rst-table">
+                <div class="rst-table-row">
+                  <div class="rst-table-cell" style="width: 50%;vertical-align: bottom;">
+                    <img src="{{asset('/assets/front/img/post/people.png')}}" alt="" />
+                  </div>
+                  <div class="rst-table-cell" style="width: 50%">
+                    <div class="text-right">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img class="owl-main" src="{{asset('/assets/front/img/post/slides03.jpg')}}" alt="" />
+    </div>
+    
+    <div class="item"><!-- Item Slider #5 -->
+      <div id="slider-item-3" class="slider-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+              <div class="rst-table">
+                <div class="rst-table-row">
+                  <div class="rst-table-cell" style="width: 25%">
+                    
+                  </div>
+                  <div class="rst-table-cell" style="width: 50%">
+                    <div class="rst-slider-menu">
+                      <img src="{{asset('/assets/front/img/post/bg_slider.jpg')}}" alt="" />
+                      <h3>Menu</h3>
+                      <p class="description-heading">Traditional or classic</p>
+                      <h5>Neapolitan pizza</h5>
+                      <p class="rst-price">$19.95</p>
+                      <h5>Premium pizza </h5>
+                      <p class="rst-price">$22</p>
+                      <h5>Classic pizza</h5>
+                      <p class="rst-price">$19.95</p>
+                      <h5>artisan pizza</h5>
+                      <p class="rst-price">$19.95</p>
+                    </div>
+                  </div>
+                  <div class="rst-table-cell" style="width: 25%">
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img class="owl-main" src="{{asset('/assets/front/img/post/slides04.jpg')}}" alt="" />
+    </div>
+  </div>
+ </div><!-- end Hero Sliders -->
+ @yield('content')
+
+@include('front.layout.main_scripts')
+
     </body>
 </html>
