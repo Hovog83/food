@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost_3306
-Source Server Version : 100110
+Source Server Version : 50545
 Source Host           : localhost:3306
 Source Database       : application
 
 Target Server Type    : MYSQL
-Target Server Version : 100110
+Target Server Version : 50545
 File Encoding         : 65001
 
-Date: 2016-04-13 13:46:04
+Date: 2016-04-18 19:17:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -246,13 +246,21 @@ CREATE TABLE `service` (
   `cat_id` int(11) NOT NULL,
   `subCat_id` int(11) DEFAULT NULL,
   `codeTitle` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `price` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `codeDescription` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of service
 -- ----------------------------
-INSERT INTO `service` VALUES ('6', 'test', 'edsadsadsasad', 'NEW', '1', null, '2016-04-11 12:50:02', '2', '7', '15', 'test');
+INSERT INTO `service` VALUES ('6', 'test', 'edsadsadsasad', 'NEW', '1', null, '2016-04-11 12:50:02', '2', '7', '15', 'test', '15.5', null);
+INSERT INTO `service` VALUES ('7', 'test', 'edsadsadsasad', 'NEW', '1', null, '2016-04-11 12:50:02', '2', '7', '15', 'test', '15.5', null);
+INSERT INTO `service` VALUES ('8', 'test', 'edsadsadsasad', 'NEW', '1', null, '2016-04-11 12:50:02', '2', '7', '15', 'test', '15.5', null);
+INSERT INTO `service` VALUES ('9', 'test', 'edsadsadsasad', 'NEW', '1', null, '2016-04-11 12:50:02', '2', '7', '15', 'test', '15.5', null);
+INSERT INTO `service` VALUES ('10', 'test', 'edsadsadsasad', 'NEW', '1', null, '2016-04-11 12:50:02', '2', '7', '15', 'test', '15.5', null);
+INSERT INTO `service` VALUES ('11', 'test', 'edsadsadsasad', 'NEW', '1', null, '2016-04-11 12:50:02', '2', '7', '15', 'test', '15.5', null);
+INSERT INTO `service` VALUES ('12', 'test', 'edsadsadsasad', 'NEW', '1', null, '2016-04-11 12:50:02', '2', '7', '15', 'test', '15.5', null);
 
 -- ----------------------------
 -- Table structure for service_images
@@ -267,12 +275,18 @@ CREATE TABLE `service_images` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of service_images
 -- ----------------------------
-INSERT INTO `service_images` VALUES ('104', '1', '0', '6', '748d1164c47cfe23a6613fdef4f16abf.jpg', '2016-04-11 12:50:02', '2016-04-11 12:50:21');
+INSERT INTO `service_images` VALUES ('104', '1', '0', '6', 'c167800b4499fd73e4cf6544de108593.jpg', '2016-04-11 12:50:02', '2016-04-11 12:50:21');
+INSERT INTO `service_images` VALUES ('105', '1', '0', '7', 'c167800b4499fd73e4cf6544de108593.jpg', '2016-04-11 12:50:02', '2016-04-11 12:50:21');
+INSERT INTO `service_images` VALUES ('106', '1', '0', '8', 'c167800b4499fd73e4cf6544de108593.jpg', '2016-04-11 12:50:02', '2016-04-11 12:50:21');
+INSERT INTO `service_images` VALUES ('107', '1', '0', '9', 'c167800b4499fd73e4cf6544de108593.jpg', '2016-04-11 12:50:02', '2016-04-11 12:50:21');
+INSERT INTO `service_images` VALUES ('108', '1', '0', '10', 'c167800b4499fd73e4cf6544de108593.jpg', '2016-04-11 12:50:02', '2016-04-11 12:50:21');
+INSERT INTO `service_images` VALUES ('109', '1', '0', '11', 'c167800b4499fd73e4cf6544de108593.jpg', '2016-04-11 12:50:02', '2016-04-11 12:50:21');
+INSERT INTO `service_images` VALUES ('110', '1', '0', '12', 'c167800b4499fd73e4cf6544de108593.jpg', '2016-04-11 12:50:02', '2016-04-11 12:50:21');
 
 -- ----------------------------
 -- Table structure for subcategories
