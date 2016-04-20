@@ -10,10 +10,31 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Common\Categorie;
 use App\Models\Common\Subcategory;
 use App\Models\Common\Service;
-
+use Session;
 
 class ServiceController extends Controller{
 
+    public function check($lg,$id=null){
+        session()->regenerate();
+        $value = Session::get('check');
+        $value[] = $id;
+        Session::push('check',$value );
+        session(['check' => $value ]);
+        Session::set('check', $value);
+        if (Session::has('check'))
+        {
+            $x = Session::get('check');
+            echo "<pre>";
+$value = session('check');
+        print_r($value);die;
+           
+        }
+        
+            echo "12";
+        print_r(Session::get('check'));die;
+
+
+    }
     public function index($lg,$id=null){
         $categorie    = new Categorie();
         $subcategory  = new Subcategory();

@@ -26,8 +26,14 @@ class Categorie extends Model{
     }
     public function getCategorieByActiv(){
       return self::with('getSub')->orderBy('order')->where('status', '=', "ACTIVE")->get();
+    }    
+    public function getCategorieByService(){
+      return self::with('getService')->orderBy('order')->where('status', '=', "ACTIVE")->get();
     }
     public function getSub(){
         return $this->hasMany('App\Models\Common\Subcategory', 'cat_id', 'id');
+    }
+    public function getService(){
+        return $this->hasMany('App\Models\Common\Service', 'cat_id', 'id');
     }
 }

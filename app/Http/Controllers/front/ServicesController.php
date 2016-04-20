@@ -20,8 +20,14 @@ class ServicesController extends Controller{
         $service = new Service();
 
         if(empty($cat) && empty($subCat)){   
-            $view = 'front.services.catlist';
-            $data = array();
+            $serviceList = $categorie->getCategorieByService($cat);
+            $view  = 'front.services.servicesList';
+            $data  = array(
+                    "serviceList" => $serviceList,
+                    "categorie"   => $categorie,
+                    "subcategory" => $subcategory,
+                    "service"     => $service,
+                );
         }elseif(!empty($cat) && empty($subCat)) {
             $categorie = Categorie::find($cat);
             $view        = 'front.services.servicesList';

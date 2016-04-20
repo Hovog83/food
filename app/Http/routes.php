@@ -225,7 +225,13 @@ Route::group([
     ],
     'prefix' => '{lang?}'
 ], function(){
+Route::get('check', function () {
+    // Retrieve a piece of data from the session...
+    $value = session('key');
 
+    // Store a piece of data in the session...
+    session(['key' => 'value']);
+});
     Route::any('/auth', ['uses' => 'UserController@auth']);
     Route::any('/login/active/{token}', ['uses' => 'UserController@active']);
     Route::any('/user', ['uses' => 'UserController@userAccount']);
@@ -237,13 +243,17 @@ Route::group([
             'uses' => 'PagesController@index',
             'as'   => 'front.page.index'
         ]);    
-    Route::any('/services/{cat?}/{subCat?}', [
+    Route::any('/menu/{cat?}/{subCat?}', [
             'uses' => 'ServicesController@index',
             'as'   => 'front.page.index'
         ]);    
     Route::any('/service/{id?}', [
             'uses' => 'ServiceController@index',
             'as'   => 'front.page.index'
+        ]);   
+ Route::any('/check/{id}', [
+            'uses' => 'ServiceController@check',
+            'as'   => 'front.page.check'
         ]);
 
 

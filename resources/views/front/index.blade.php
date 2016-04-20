@@ -107,24 +107,5 @@
     </div><!--- end Contact Detail/Map -->
   </div><!--- end container -->
 
-  <!--- Footer -->
-  <footer id="footer">
-    <div class="container">
-      <div class="row">
-        <div class="rst-table">
-          <div class="rst-table-row">
-            <div class="rst-copyright rst-table-cell">
-              <a href="https://www.linkedin.com/in/hovogasparyan" class="rst-logo-footer">
-              &copy; 2016 OwlToCode. All right reserved.
-              </a>
-            </div>
-            <div class="rst-note rst-table-cell">
-            </div>
-          </div>
-        </div>
-        <a class="rst-backtop" href="#"><i class="fa fa-chevron-up"></i></a>
-      </div>
-    </div>
-  </footer>
 </div><!--- End Wrapper -->
 @endsection

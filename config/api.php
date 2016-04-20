@@ -13,10 +13,12 @@ return [
     */
 
     'route' => [
+        'check',
+        'checkout',
         'auth',
         'pages',
         'classifieds',
-        'services',
+        'menu',
         'service',
     ],
 ];

@@ -28,7 +28,7 @@
             <li class="">
               <a href="#">Pages</a>
             </li>
-            <li><a href="menu.html">Menu</a></li>
+            <li><a href="/menu">Menu</a></li>
           </ul>
         </div>
         <div class="rst-account rst-table-cell">
@@ -148,5 +148,24 @@
 
 @include('front.layout.main_scripts')
 
+  <!--- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="rst-table">
+          <div class="rst-table-row">
+            <div class="rst-copyright rst-table-cell">
+              <a href="https://www.linkedin.com/in/hovogasparyan" class="rst-logo-footer">
+              &copy; 2016 OwlToCode. All right reserved.
+              </a>
+            </div>
+            <div class="rst-note rst-table-cell">
+            </div>
+          </div>
+        </div>
+        <a class="rst-backtop" href="#"><i class="fa fa-chevron-up"></i></a>
+      </div>
+    </div>
+  </footer>
     </body>
 </html>
