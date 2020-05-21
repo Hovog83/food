@@ -98,7 +98,6 @@
 
         @if(isset($translation['default']))
             @foreach($translation['default'] as $name => $lang)
-              @if($name != "page")
                 <section>
                     <!-- row -->
                     <div class="row">
@@ -217,106 +216,9 @@
                     </div>
                     <!-- end row -->
                 </section>
-               @else
-               <section>
-                   <!-- row -->
-                   <div class="row">
-
-                       <!-- NEW COL START -->
-                       <article class="col-sm-12">
-
-                           <!-- Widget ID (each widget will need unique ID)-->
-                           <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0-{{ $name }}"
-                                data-widget-editbutton="false" data-widget-custombutton="false">
-                               <!-- widget options:
-                               usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-                               data-widget-colorbutton="false"
-                               data-widget-editbutton="false"
-                               data-widget-togglebutton="false"
-                               data-widget-deletebutton="false"
-                               data-widget-fullscreenbutton="false"
-                               data-widget-custombutton="false"
-                               data-widget-collapsed="true"
-                               data-widget-sortable="false"
-
-                               -->
-                               <header>
-                                   <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-
-                                   <h2>{{ $name }} </h2>
-
-                               </header>
-
-                               <!-- widget div-->
-                               <div>
-
-                                   <!-- widget edit box -->
-                                   <div class="jarviswidget-editbox">
-                                       <!-- This area used as dropdown edit box -->
-
-                                   </div>
-                                   <!-- end widget edit box -->
-
-                                   <!-- widget content -->
-                                   <div class="widget-body">
-                                       <div class="widget-body-toolbar">
-
-                                       <form >
-                                           <table class="table table-bordered table-striped" style="clear: both">
-                                               <tbody>
-                                               @foreach($lang as $key => $val)
-                                                   @if( !is_array($val) )
-                                                       <tr>
-                                                           <td style="width:49%;">
-                                                              {{ Form::textarea("html_en_$key", $val, $attributes = array('class'=>'form-control ckeditorHtmldi','id'=>"en_".$key,'disabled'=>"disabled"))}}
-                                                           </td>
-                                                           <td style="width:49%">
-                                                                {{ Form::textarea("html_$key",  isset($translation['current'][$name][$key])?$translation['current'][$name][$key]: $val, $attributes = array('class'=>'form-control ckeditorHtml',"data-lang"=>"page","data-lang-key"=>$key,'id'=>$key))}}
-                                                           </td>
-                                                       </tr>
-                                                   @endif
-                                               @endforeach
-                                               </tbody>
-                                           </table>
-                                           <div class="form-actions">
-                                               <div class="row">
-                                                   <div class="col-md-12">
-                                                       <button class="btn btn-default" type="submit">
-                                                           Cancel
-                                                       </button>
-                                                       <button class="btn btn-primary lang-submit" type="submit"
-                                                               data-lang="{{ $name }}">
-                                                           <i class="fa fa-save"></i>
-                                                           Submit
-                                                       </button>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                      </form>         
-                                       </div>
-
-                                   </div>
-                                   <!-- end widget content -->
-
-                               </div>
-                               <!-- end widget div -->
-
-                           </div>
-                           <!-- end widget -->
-
-
-                       </article>
-                       <!-- END COL -->
-
-                   </div>
-                   <!-- end row -->
-               </section>
-               @endif
             @endforeach
         @elseif(isset($translation['auth']))
               @foreach($translation as $name => $lang)
-              @if($name != "page")
                 <section>
                     <!-- row -->
                     <div class="row">
@@ -432,7 +334,6 @@
                     </div>
                     <!-- end row -->
                 </section>
-             @endif
               @endforeach
         @endif
     </div>
@@ -458,7 +359,6 @@
             validation: {},
             pagination: {},
             password: {},
-            page: {},
         };
         function pushTranslation(obj) {
             id = '#' + obj.name;
@@ -668,20 +568,7 @@
                 var $button = $(this);
                 var chapter = $button.data('lang');
 
-                if(chapter == 'page'){
-                    var obj =  []
-                     i = 0;
-                     $('.ckeditorHtml').each( function () {
-                         text   =  textarea[i].getData();
-                         id_text    = idTextarea[i]
-                         $input = $('#'+id_text).parent().children("textarea");
-                         title  = $input.data('lang');
-                         key    = $input.data('lang-key');
-                         // obj[i] =  {text: text, id: id, title: title,key:key}
-                       i++; 
-                       lang[chapter][key] = text;
-                     });
-                }
+           
                 $.ajax({
                     url: '{{ url("/admin/language/edit") }}',
                     type: 'Post',

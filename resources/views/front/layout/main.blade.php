@@ -1,171 +1,210 @@
 @include('front.layout.main_header')
-  <body>
-  <!-- Preloader -->
-  <div id="pageLoading">
-    <div class="bouncing">
-      <em class="icon-food"></em>
-    </div>
-  </div>
-<div id="wrapper" class="home-page">
- <header id="header">
-  <div class="container">
-    <div class="rst-table">
-      <div class="rst-table-row">
-        <a href="index-2.html" class="rst-logo rst-table-cell"><img src="{{asset('/assets/front/img/logo-home.png')}}" alt="" /></a>
-        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <div class="rst-nav-menu collapse navbar-collapse bs-navbar-collapse rst-table-cell">
-          <form class="rst-search-mobie" action="http://themeforces.com/">
-            <button class="rst-submit"><i class="fa fa-search"></i></button>
-            <input type="text" value="" />
-          </form>
-          <ul class="rst-main-menu">
-            <li class="current-menu-item"><a href="/">Home</a></li>
-            <li class="">
-              <a href="#">Pages</a>
-            </li>
-            <li><a href="/menu">Menu</a></li>
-          </ul>
-        </div>
-        <div class="rst-account rst-table-cell">
-          <div class="rst-cart">
-            <a href="#" class="rst-cart-icon"><span>+</span></a>
-            <div class="rst-form-login rst-cart-info">
-              <div class="rst-list-product">
-                <div class="rst-product-item">
-                  <a href="#">Sashimi &amp; vasabi <span class="count">2</span> <span class="price">$20</span></a>
-                </div>
-                <div class="rst-product-item">
-                  <a href="#">Dinner menu <span class="count">2</span> <span class="price">$25</span></a>
-                </div>
-                <div class="rst-product-item">
-                  <a href="#">Salade menu <span class="count">2</span> <span class="price">$25</span></a>
-                </div>
-              </div>
-              <div class="rst-checkout">
-                <a href="checkout.html" class="btn btn-success btn-sm">Check out</a>
-                <span class="price">$70</span>
-              </div>
-            </div>
-          </div>
-        </div>
+  
+  <div class="wrapper">
 
-      </div>
-    </div>
-  </div>
- </header>  
- <!-- Hero Sliders -->
- <div id="main-slider">
-  <div class="owl-carousel owl-theme">
-    <div class="item active"><!-- Item Slider #1 -->
-      <div id="slider-item-1" class="slider-content">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-10 col-sm-offset-1">
-              <div class="rst-table">
-                <div class="rst-table-row">
-                  <div class="rst-table-cell" style="width: 50%">
-                    
-                  </div>
-                  <div class="rst-table-cell" style="width: 50%">
-                    <img src="{{asset('/assets/front/img/post/slider3.png')}}" alt="" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img class="owl-main" src="{{asset('/assets/front/img/post/slides02.jpg')}}" alt="" />
-    </div>
-    <div class="item"><!-- Item Slider #2 -->
-      <div id="slider-item-2" class="slider-content">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-10 col-sm-offset-1">
-              <div class="rst-table">
-                <div class="rst-table-row">
-                  <div class="rst-table-cell" style="width: 50%;vertical-align: bottom;">
-                    <img src="{{asset('/assets/front/img/post/people.png')}}" alt="" />
-                  </div>
-                  <div class="rst-table-cell" style="width: 50%">
-                    <div class="text-right">
+       <!-- HEADER -->
+       <header class="site-header header-opt-1">
+           <!-- header-top -->
 
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img class="owl-main" src="{{asset('/assets/front/img/post/slides03.jpg')}}" alt="" />
-    </div>
+           <!-- header-content -->
+          
+           <!-- header-menu-bar -->
     
-    <div class="item"><!-- Item Slider #5 -->
-      <div id="slider-item-3" class="slider-content">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-10 col-sm-offset-1">
-              <div class="rst-table">
-                <div class="rst-table-row">
-                  <div class="rst-table-cell" style="width: 25%">
-                    
-                  </div>
-                  <div class="rst-table-cell" style="width: 50%">
-                    <div class="rst-slider-menu">
-                      <img src="{{asset('/assets/front/img/post/bg_slider.jpg')}}" alt="" />
-                      <h3>Menu</h3>
-                      <p class="description-heading">Traditional or classic</p>
-                      <h5>Neapolitan pizza</h5>
-                      <p class="rst-price">$19.95</p>
-                      <h5>Premium pizza </h5>
-                      <p class="rst-price">$22</p>
-                      <h5>Classic pizza</h5>
-                      <p class="rst-price">$19.95</p>
-                      <h5>artisan pizza</h5>
-                      <p class="rst-price">$19.95</p>
-                    </div>
-                  </div>
-                  <div class="rst-table-cell" style="width: 25%">
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img class="owl-main" src="{{asset('/assets/front/img/post/slides04.jpg')}}" alt="" />
-    </div>
-  </div>
- </div><!-- end Hero Sliders -->
+           <div class="header-menu-bar header-sticky" style="background: #3f923f;">
+               <div class="header-menu-nav menu-style-1">
+                   <div class="container">
+                       <div class="header-menu-nav-inner">
+                        <div id="box-vertical-megamenus" class="box-vertical-megamenus nav-toggle-cat">
+                            <h4 class="title active">
+                                <span class="title-menu">NAme</span>   
+                            </h4>
+                          
+                        </div>
+                           <div class="header-menu header-menu-resize" style="text-align: center;">
+                               <ul class="header-nav krystal-nav">
+                                   <li class="btn-close hidden-md"><i class="fa fa-times" aria-hidden="true"></i></li>
+                                   <li class="menu-item-has-children">
+                                       <a href="/" style="color: #f9f9f9;">HOME</a>
+                                   </li> 
+                                   @foreach(Layout::getMenuTop() as $value)
+                                     <li class="menu-item-has-children">
+                                       <a href="/pages/{{$value->getpages->slug}}" style="color: #f9f9f9;">
+                                          {{ $value->getpages->title}}
+                                       </a>
+                                     </li> 
+                                   @endforeach
+                               </ul>
+                           </div>
+                           <span data-action="toggle-nav" class="menu-on-mobile hidden-md active">
+                               <span class="btn-open-mobile home-page">
+                                   <span></span>
+                                   <span></span>
+                                   <span></span>
+                               </span>
+                               <span class="title-menu-mobile"></span> 
+                           </span>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </header><!-- end HEADER -->        
  @yield('content')
+      <!-- FOOTER -->
+      <footer class="site-footer footer-opt-1 newsletter-icon">
 
-@include('front.layout.main_scripts')
+              <div class="footer-top full-width">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-md-3">
+                              <div class="newsletter-title">
+                                  <h3 class="h3-newsletter">Sign up for newsletter</h3>
+                                  <span class="span-newsletter">Receive $50 Coupon for fist shopping...</span>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="newsletter-form">
+                                  <form id="newsletter-footer" class="form subscribe">
+                                      <div class="control">
+                                          <input type="email" placeholder="Enter your email address" name="email" class="input-subscribe">
+                                          <button type="submit" title="Subscribe" class="btn subscribe">
+                                              <span>Subscribe</span>
+                                          </button>
+                                      </div>
+                                  </form>
+                              </div>
+                          </div>
+                          <div class="col-md-3">
+                              <div class="socials">
+                                  <a href="" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                  <a href="" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                  <a href="" class="social"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                  <a href="" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="footer-column">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-md-3 col-sm-3">
+                              <h3 class="title-of-section">Contact information</h3>
+                              <div class="contacts">
+                                  <h3 class="contacts-title">Address</h3>
+                                  <span class="contacts-info">218 Fifth Avenue, HeavenTower NewYork City</span>
+                                  <h3 class="contacts-title">Phone</h3>
+                                  <span class="contacts-info">(+68) 123 456 7890</span>
+                                  <h3 class="contacts-title">Email</h3>
+                                  <span class="contacts-info">Hot-Support@Krystal.com</span>
+                              </div>
+                          </div>
+                          <div class="col-md-3 col-sm-3">
+                              <div class="links">
+                              <h3 class="title-of-section">My account</h3>
+                              <ul>
+                                  <li><a href="">Sign In</a></li>
+                                  <li><a href="">View Cart</a></li>
+                                  <li><a href="">My Wishlist</a></li>
+                                  <li><a href="">Track My Order</a></li>
+                                  <li><a href="">Help</a></li>
+                              </ul>
+                              </div>
+                          </div>
+                          <div class="col-md-3 col-sm-3">
+                              <div class="links">
+                              <h3 class="title-of-section">Information</h3>
+                              <ul>
+                                  <li><a href="">Delivery information</a></li>
+                                  <li><a href="">Privacy Policy</a></li>
+                                  <li><a href="">Terms & Conditions</a></li>
+                                  <li><a href="">Contact us</a></li>
+                                  <li><a href="">Sitemap</a></li>
+                              </ul>
+                              </div>
+                          </div>
+                          <div class="col-md-3 col-sm-3">
+                              <div class="links">
+                              <h3 class="title-of-section">Customer Services</h3>
+                              <ul>
+                                  <li><a href="">Shipping & Returns</a></li>
+                                  <li><a href="">Secure Shopping</a></li>
+                                  <li><a href="">International Shipping</a></li>
+                                  <li><a href="">Affiliates</a></li>
+                                  <li><a href="">Contact</a></li>
+                              </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
 
-  <!--- Footer -->
-  <footer id="footer">
-    <div class="container">
-      <div class="row">
-        <div class="rst-table">
-          <div class="rst-table-row">
-            <div class="rst-copyright rst-table-cell">
-              <a href="https://www.linkedin.com/in/hovogasparyan" class="rst-logo-footer">
-              &copy; 2016 OwlToCode. All right reserved.
-              </a>
-            </div>
-            <div class="rst-note rst-table-cell">
-            </div>
-          </div>
-        </div>
-        <a class="rst-backtop" href="#"><i class="fa fa-chevron-up"></i></a>
-      </div>
-    </div>
-  </footer>
-    </body>
+              <div class="footer-bottom">
+                  <div class="container">
+                      <div class="links">
+                      <h3 class="quick-link">Quick Links</h3>
+                      <ul>
+                          <li><a href="" class="links-primary">Tablets:</a></li>
+                          <li><a href="">Windows Tablets</a></li>
+                          <li><a href="">Android Tablets</a></li>
+                          <li><a href="">Micromax Tablets</a></li>
+                          <li><a href="">HCL Tablets </a></li>
+                          <li><a href="">Samsung Tablets</a></li>
+                          <li><a href="">Lenovo Tablets</a></li>
+                          <li><a href="">Asus Tablets</a></li>
+                          <li><a href="">Apple Tablets </a></li>
+                          <li><a href="">HCL Tablets</a></li>
+                          <li><a href="">Samsung Tablets </a></li>
+                          <li><a href="">Lenovo Tablets</a></li>
+                      </ul>
+                      <ul>
+                          <li><a href="" class="links-primary">Mobiles:</a></li>
+                          <li><a href="">Moto E</a></li>
+                          <li><a href="">Samsung Mobile</a></li>
+                          <li><a href="">Micromax Mobile</a></li>
+                          <li><a href="">Nokia Mobile</a></li>
+                          <li><a href="">HTC Mobile</a></li>
+                          <li><a href="">Sony Mobile</a></li>
+                          <li><a href="">Apple Mobile</a></li>
+                          <li><a href="">LG Mobile</a></li>
+                          <li><a href="">Karbonn Mobile</a></li>
+                          <li><a href="">Furniture</a></li>
+                          <li><a href="">Lenovo A7000</a></li>
+                          <li><a href="">Home Store</a></li>
+                      </ul>
+                      <ul>
+                          <li><a href="" class="links-primary">Watches:</a></li>
+                          <li><a href="">The Big Billion Days</a></li>
+                          <li><a href="">MOTO X Play</a></li>
+                          <li><a href="">Furniture</a></li>
+                          <li><a href="">Lenovo A7000</a></li>
+                          <li><a href="">Home Store</a></li>
+                          <li><a href="">Electronic Sale</a></li>
+                          <li><a href="">Offers</a></li>
+                      </ul>
+                  </div>
+
+                  </div>
+              </div>
+              <div class="copyright full-width">
+                   <div class="container">
+                       <div class="copyright-right">                
+                          © Copyright 2017<span> Krystal</span>. All Rights Reserved.
+                      </div>
+                      <div class="pay-men">
+                          <a href=""><img src="/assets/front/assets/images/home1/pay1.jpg" alt="pay1"></a>
+                          <a href=""><img src="/assets/front/assets/images/home1/pay2.jpg" alt="pay2"></a>
+                          <a href=""><img src="/assets/front/assets/images/home1/pay3.jpg" alt="pay3"></a>
+                          <a href=""><img src="/assets/front/assets/images/home1/pay4.jpg" alt="pay4"></a>
+                      </div>
+                   </div>
+              </div>
+      </footer><!-- end FOOTER -->    
+      <!--back-to-top  -->
+      <!-- <a href="#" class="back-to-top">
+          <i aria-hidden="true" class="fa fa-angle-up"></i>
+      </a> -->
+  </div>
+    <a href="#" id="scrollup" title="Scroll to Top">Scroll</a>
+   @include('front.layout.main_scripts')
+</body>
 </html>

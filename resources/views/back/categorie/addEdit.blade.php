@@ -47,25 +47,25 @@
                         <div class="col-xs-12">
                           <section class="col col-4">
                             {{ Form::label('name', 'Name', array('class' => 'input'))}}
-                            {{ Form::text('name', $categories->name, $attributes = array('class'=>'form-control'))}}
-                            {{ $errors->addEdit->first('name') }}
+                            {{ Form::text('name', $categories->name,  array('class'=>'form-control'))}}
+                            <span style="color: red">{{ $errors->addEdit->first('name') }}</span>
                           </section>                           
                           <section class="col col-4">
                             {{ Form::label('icone', 'Icone', array('class' => 'input'))}}
-                            {{ Form::text('icone', $categories->icone, $attributes = array('class'=>'form-control'))}}
-                            {{ $errors->addEdit->first('icone') }}
+                            {{ Form::text('icone', $categories->icone,  array('class'=>'form-control'))}}
+                            <span style="color: red">{{ $errors->addEdit->first('icone') }}</span>
                           </section>  
                         </div>          
                         <div class="col-xs-12">
                           <section class="col col-4">
                             {{ Form::label('order', 'order', array('class' => 'input'))}}
-                            {{ Form::number('order', $categories->order, $attributes = array('class'=>'form-control'))}}
-                            {{ $errors->addEdit->first('order') }}
+                            {{ Form::number('order', $categories->order,  array('class'=>'form-control'))}}
+                            <span style="color: red">{{ $errors->addEdit->first('order') }}</span>
                           </section>                           
                           <section class="col col-4">
                             {{ Form::label('status', 'status', array('class' => 'input'))}}
-                            {{ Form::select('status',array('ACTIVE' => 'ACTIVE', 'DELETED' => 'DELETED'), $categories->status, $attributes = array('class'=>'form-control'))}}
-                            {{ $errors->addEdit->first('status') }}
+                            {{ Form::select('status',array('ACTIVE' => 'ACTIVE', 'DELETED' => 'DELETED'), $categories->status,  array('class'=>'form-control'))}}
+                            <span style="color: red">{{ $errors->addEdit->first('status') }}</span>
                           </section>  
                         </div>
                         <div class="col-xs-12">
@@ -77,7 +77,6 @@
 
                     </div>
                     <!-- end widget div -->
-
                 </div>
                 <!-- end widget -->
             </article>
@@ -103,6 +102,11 @@
                     return !$("input[name='id']").val();
                 }
             };
+
+
+            $(".f1").on("click",function(argument) {
+              $("#icone").val($(this).children( ".fa" ).attr('class'))
+            })
 
             $("#smart-form-register").validate({
                 // Rules for form validation

@@ -12,8 +12,7 @@ class Categorie extends Model{
 	{
 		return [
 				'name'   => 'required|max:50|min:2',
-				'icone'  => 'required|max:30',
-				'order'  => 'required|integer',
+				'order'  => 'integer',
 				'status' => 'required',
 		];
 	}

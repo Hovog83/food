@@ -19,6 +19,13 @@ class SubcategoryController extends Controller{
         foreach ($categorie->toArray() as $key => $value) {
             $cat[$value["id"]] = $value["name"];
         }
+
+        $subCategorie = Subcategory::where('status', '=', "ACTIVE")->select('id', 'name')->get();
+        $sudCat[] = "Sub categorie"; 
+        foreach ($subCategorie->toArray() as $key => $value) {
+            $sudCat[$value["id"]] = $value["name"];
+        }
+        
     	if(!$id){
 	    	$subcategory = new Subcategory();
             $url = 'admin/subcategory/create';
@@ -34,13 +41,10 @@ class SubcategoryController extends Controller{
 	                       ->withInput();
 	        }else{
                 
-                $name = preg_replace('/[^a-z-0-9?]+/iu', '_', $request->name);
-                $language = array($name => $request->name);
-                Language::insertKey($language,$id);
 
                  $subcategory->name   = $request->name;
-                 $subcategory->codeTitle = $name;
                  $subcategory->cat_id = $request->cat_id;
+                 $subcategory->sud_cat_id = $request->sud_cat_id;
                  $subcategory->icone  = $request->icone; 
                  $subcategory->order  = $request->order;
                  $subcategory->status = $request->status;
@@ -49,7 +53,7 @@ class SubcategoryController extends Controller{
 	        }
 	        return redirect('admin/subcategory');
         }
-        return view('back.subcategory.addEdit',["subcategory"=>$subcategory,"cat"=>$cat]);
+        return view('back.subcategory.addEdit',["subcategory"=>$subcategory,"cat"=>$cat,"sudCat"=>$sudCat]);
     }
     public function delete($id) {
         Subcategory::find($id)->delete();

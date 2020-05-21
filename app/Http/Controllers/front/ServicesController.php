@@ -14,42 +14,30 @@ use App\Models\Common\Service;
 
 class ServicesController extends Controller{
 
-    public function index($lg,$cat=null,$subCat=null){
+    public function index($lg,$cat=null){
         $categorie = new Categorie();
         $subcategory = new Subcategory();
         $service = new Service();
+        $categorie = new Categorie();
 
-        if(empty($cat) && empty($subCat)){   
-            $serviceList = $categorie->getCategorieByService($cat);
-            $view  = 'front.services.servicesList';
-            $data  = array(
-                    "serviceList" => $serviceList,
-                    "categorie"   => $categorie,
-                    "subcategory" => $subcategory,
-                    "service"     => $service,
-                );
-        }elseif(!empty($cat) && empty($subCat)) {
-            $categorie = Categorie::find($cat);
-            $view        = 'front.services.servicesList';
-            $serviceList = $service->getServiceForCat($cat);
-            $data        = array(
-                    "serviceList" => $serviceList,
-                    "categorie"   => $categorie,
-                    "subcategory" => $subcategory,
-                    "service"     => $service,
-                );
-        }elseif(!empty($cat) && !empty($subCat)) {
-            $view        = 'front.services.servicesList';
-            $serviceList = $service->getServiceForSubCat($subCat);
-            $categorie   = Categorie::find($cat);
-            $subcategory = Subcategory::find($subCat);
-            $data        = array(
-                    "serviceList" => $serviceList,
-                    "categorie"   => $categorie,
-                    "subcategory" => $subcategory,
-                    "service"     => $service,
-                );
-        }
+
+        $catLIst   = $categorie->getCategorieByActiv()->toArray(); 
+        // $categorie = Categorie::find($cat);
+        $categorie = Categorie::where('codeTitle', '=', $cat)->first();
+
+
+        $view        = 'front.services.servicesList';
+        $serviceList = $service->getServiceForCat($categorie->id);
+        
+        $data        = array(
+                "serviceList" => $serviceList,
+                "categorie"   => $categorie,
+                "subcategory" => $subcategory,
+                "service"     => $service,
+                "catLIst"     => $catLIst,
+            );
+
+
        return view($view,$data);
     }
 }

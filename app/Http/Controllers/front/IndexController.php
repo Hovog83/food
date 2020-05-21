@@ -14,15 +14,13 @@ use App\Models\Common\Service;
 class IndexController extends Controller
 {
     public function index(){
+
         $categorie = new Categorie();
-        $Service_m = new Service();
+
+
         $catLIst   = $categorie->getCategorieByActiv()->toArray(); 
-        $service   =  $Service_m->orderByRaw("RAND()")->take(1)->first();
-        $services  =  Service::orderByRaw("RAND()")->take(6)->get();
-// getServiceMineImages
-        return view('front.index',
-            ["catLIst"=> $catLIst,"Service_m"=> $Service_m,"service"=> $service,"services"=> $services]
-            );
+
+        return view('front.index', ["catLIst"=> $catLIst] );
     }
 
    /* public function login(Request $request){

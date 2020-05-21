@@ -25,20 +25,18 @@ class CategorieController extends Controller{
         if ($request->isMethod('post')) {
           $validator = Validator::make($request->all(),Categorie::rules());
 	        if ($validator->fails()) {
-	            return redirect($url)
-	                       ->withErrors($validator,'addEdit')
-	                       ->withInput();
+                return redirect($url)
+                           ->withErrors($validator,'addEdit')
+                           ->withInput();
 	        }else{
                 $name = preg_replace('/[^a-z-0-9?]+/iu', '_', $request->name);
-                $language = array($name => $request->name);
-                Language::insertKey($language,$id);
                  
-                 $categories->codeTitle = $name;
-                 $categories->name      = $request->name;
-                 $categories->icone     = $request->icone;
-                 $categories->order     = $request->order;
-                 $categories->status    = $request->status;
-         	  	 $categories->save();
+                $categories->codeTitle = $name;
+                $categories->name      = $request->name;
+                $categories->icone     = $request->icone;
+                $categories->order     = $request->order;
+                $categories->status    = $request->status;
+         	  	$categories->save();
 
 	        }
 	        return redirect('admin/categorie');
@@ -47,7 +45,7 @@ class CategorieController extends Controller{
     }
     public function delete($id) {
         Categorie::find($id)->delete();
-         return redirect('admin/categorie');
+        return redirect('admin/categorie');
     }
     /**
      * Process datatables ajax request.

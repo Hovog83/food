@@ -91,7 +91,6 @@ class Language extends Model{
         $pagination = include(realpath(base_path('resources/lang') . "/$code/pagination.php"));
         $passwords  = include(realpath(base_path('resources/lang') . "/$code/passwords.php"));
         $validation = include(realpath(base_path('resources/lang') . "/$code/validation.php"));
-        $page       = include(realpath(base_path('resources/lang') . "/$code/page.php"));
 
         return [
             'auth'       => $auth,
@@ -99,7 +98,6 @@ class Language extends Model{
             'pagination' => $pagination,
             'passwords'  => $passwords,
             'validation' => $validation,
-            'page'       => $page,
         ];
     }
 

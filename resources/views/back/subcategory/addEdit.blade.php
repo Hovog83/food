@@ -27,11 +27,8 @@
                     -->
                     <header>
                         <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-
                         <h2>Categorie form </h2>
-
                     </header>
-
                     <!-- widget div-->
                     <div>
                         <!-- widget edit box -->
@@ -48,29 +45,34 @@
                           <section class="col col-4">
                             {{ Form::label('name', 'Name', array('class' => 'input'))}}
                             {{ Form::text('name', $subcategory->name, $attributes = array('class'=>'form-control'))}}
-                            {{ $errors->addEdit->first('name') }}
+                            <span style="color: red">{{ $errors->addEdit->first('name') }}</span>
                           </section>                           
                           <section class="col col-4">
                             {{ Form::label('icone', 'Icone', array('class' => 'input'))}}
                             {{ Form::text('icone', $subcategory->icone, $attributes = array('class'=>'form-control'))}}
-                            {{ $errors->addEdit->first('icone') }}
+                            <span style="color: red">{{ $errors->addEdit->first('icone') }}</span>
                           </section>  
                         </div>          
                         <div class="col-xs-12">
                           <section class="col col-4">
                             {{ Form::label('order', 'order', array('class' => 'input'))}}
                             {{ Form::number('order', $subcategory->order, $attributes = array('class'=>'form-control'))}}
-                            {{ $errors->addEdit->first('order') }}
+                            <span style="color: red">{{ $errors->addEdit->first('order') }}</span>
                           </section>                           
                           <section class="col col-4">
                             {{ Form::label('status', 'status', array('class' => 'input'))}}
                             {{ Form::select('status',array('ACTIVE' => 'ACTIVE', 'DELETED' => 'DELETED'), $subcategory->status, $attributes = array('class'=>'form-control'))}}
-                            {{ $errors->addEdit->first('status') }}
+                            <span style="color: red">{{ $errors->addEdit->first('status') }}</span>
                           </section>                            
                           <section class="col col-4">
                             {{ Form::label('cat_id', 'cat_id', array('class' => 'input'))}}
                             {{ Form::select('cat_id',$cat, $subcategory->cat_id, $attributes = array('class'=>'form-control'))}}
-                            {{ $errors->addEdit->first('status') }}
+                            <span style="color: red">{{ $errors->addEdit->first('cat_id') }}</span>
+                          </section>                          
+                          <section class="col col-4">
+                            {{ Form::label('sud_cat_id', 'sud_cat_id', array('class' => 'input'))}}
+                            {{ Form::select('sud_cat_id',$sudCat, $subcategory->sud_cat_id, $attributes = array('class'=>'form-control'))}}
+                            <span style="color: red">{{ $errors->addEdit->first('sud_cat_id') }}</span>
                           </section>  
                         </div>
                         <div class="col-xs-12">
@@ -81,7 +83,6 @@
                         <!-- end widget content -->
 
                     </div>
-                    <!-- end widget div -->
 
                 </div>
                 <!-- end widget -->
@@ -109,6 +110,9 @@
                 }
             };
 
+            $(".f1").on("click",function(argument) {
+              $("#icone").val($(this).children( ".fa" ).attr('class'))
+            })
             $("#smart-form-register").validate({
                 // Rules for form validation
                 rules: {

@@ -5,15 +5,20 @@ namespace App\Http\Controllers\front;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Common\Pages;
+use App\Models\Common\Categorie;
 
 class PagesController extends Controller
 {
     public function index($lg,$slug){
         $page = Pages::getPageBySlug($slug);
+        $categorie = new Categorie();
+        $cat   = $categorie->getCategorieByActiv(); 
+
+
         if(empty($page)){
          return redirect($lang . '/');
         }
-        return view('front.page.index',["page" => $page]);
+        return view('front.page.index',["page" =>  $page , "cat" =>  $cat ]);
     }
 
    /* public function login(Request $request){

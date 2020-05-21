@@ -1,12 +1,5 @@
 <aside id="left-panel">
-    <!-- NAVIGATION : This navigation is also responsive-->
     <nav>
-        <!--
-        NOTE: Notice the gaps after each icon usage <i></i>..
-        Please note that these links work a bit different than
-        traditional href="" links. See documentation for details.
-        -->
-
         <ul>
             <li class="">
                 <a href="#" title="User"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent">User</span></a>
@@ -20,7 +13,7 @@
 
                 </ul>
             </li>            
-<!--             <li class="">
+          <li class="">
                 <a href="#" title="User"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent">Categorie</span></a>
                 <ul>
                     <li class="{{ Menu::isActive('admin.categorie.index') }}">
@@ -41,50 +34,28 @@
                         </ul>
                     </li>       
                 </ul>
-            </li>   -->         
+            </li>           
             
             <li class="">
-                <a href="#" title="User"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent">Service</span></a>
+                <a href="#" title="User"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent">product</span></a>
                 <ul>
-                <li class="">
-                    <a href="#" title="User"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent">Categorie</span></a>
-                    <ul>
-                        <li class="{{ Menu::isActive('admin.categorie.index') }}">
-                            <a href="/admin/categorie/" title="List"><span class="menu-item-parent">List</span></a>
-                        </li>
-                        <li class="{{ Menu::isActive('admin.categorie.create') }}">
-                            <a href="/admin/categorie/create" title="List"><span class="menu-item-parent">Create</span></a>
-                        </li>
-                        <li class="">
-                            <a href="#" title="User"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent">Subcategory</span></a>
-                            <ul>
-                                <li class="{{ Menu::isActive('admin.subcategory.index') }}">
-                                    <a href="/admin/subcategory/" title="List"><span class="menu-item-parent">List</span></a>
-                                </li>
-                                <li class="{{ Menu::isActive('admin.subcategory.create') }} {{ Menu::isActive('admin.subcategory.edit') }}">
-                                    <a href="/admin/subcategory/create" title="List"><span class="menu-item-parent">Create</span></a>
-                                </li>
-                            </ul>
-                        </li>       
-                    </ul>
-                </li>  
-                    <li class="{{ Menu::isActive('admin.service.index') }}">
+                    <li class="{{ Menu::isActive('admin.product.index') }}">
                         <a href="#" title="List"><span class="menu-item-parent"><i class="fa fa-lg fa-fw fa-users"></i> lists</span></a>
                         <ul>
-                            <li class="{{ Menu::isActive('admin.service.index') }}">
-                                <a href="/admin/service/" title="List"><span class="menu-item-parent">All list</span></a>
+                            <li class="{{ Menu::isActive('admin.product.index') }}">
+                                <a href="/admin/product/" title="List"><span class="menu-item-parent">All list</span></a>
                             </li>
-                            <li class="{{ Menu::isActive('admin.service.type.typeApproved') }}">
-                                <a href="/admin/service/type/approved" title="List"><span class="menu-item-parent">Approved list</span></a>
+                            <li class="{{ Menu::isActive('admin.product.type.typeApproved') }}">
+                                <a href="/admin/product/type/approved" title="List"><span class="menu-item-parent">Approved list</span></a>
                             </li>
-                            <li class="{{ Menu::isActive('admin.service.type.typeNew') }}">
-                                <a href="/admin/service/type/new" title="List"><span class="menu-item-parent">New list</span></a>
+                            <li class="{{ Menu::isActive('admin.product.type.typeNew') }}">
+                                <a href="/admin/product/type/new" title="List"><span class="menu-item-parent">New list</span></a>
                             </li>
-                            <li class="{{ Menu::isActive('admin.service.type.typeBlocked') }}">
-                                <a href="/admin/service/type/blocked" title="List"><span class="menu-item-parent">Blocked list</span></a>
+                            <li class="{{ Menu::isActive('admin.product.type.typeBlocked') }}">
+                                <a href="/admin/product/type/blocked" title="List"><span class="menu-item-parent">Blocked list</span></a>
                             </li>
-                            <li class="{{ Menu::isActive('admin.service.type.typeDelete') }}">
-                                <a href="/admin/service/type/delete" title="List"><span class="menu-item-parent">Delete  list</span></a>
+                            <li class="{{ Menu::isActive('admin.product.type.typeDelete') }}">
+                                <a href="/admin/product/type/delete" title="List"><span class="menu-item-parent">Delete  list</span></a>
                             </li>
                         </ul>
                     </li>
